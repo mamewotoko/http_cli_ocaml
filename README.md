@@ -1,5 +1,4 @@
-http_cli_ocaml
-[![Build Status](https://travis-ci.org/mamewotoko/http_cli_ocaml.svg?branch=master)](https://travis-ci.org/mamewotoko/http_cli_ocaml) 
+http_cli_ocaml [![Build Status](https://travis-ci.org/mamewotoko/http_cli_ocaml.svg?branch=master)](https://travis-ci.org/mamewotoko/http_cli_ocaml) 
 ==============
 A tiny sample program of http protocol
 
