@@ -1,5 +1,5 @@
-HttpClient
-==========
+http_cli_ocaml
+==============
 A tiny sample program of http protocol
 
 Build
@@ -21,6 +21,8 @@ History
 
 TODO
 ----
+* add travis ci script
+  * https://github.com/ocaml/ocaml-ci-scripts
 * write url.mli and http.mli
 * output executable to directory (e.g. bin)
 
