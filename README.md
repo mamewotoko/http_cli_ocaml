@@ -19,6 +19,11 @@ History
 -------
 2003/ 2/ 8: created
 
+TODO
+----
+* write url.mli and http.mli
+* output executable to directory (e.g. bin)
+
 References
 ----------
 This program uses ocaml makefile to build.
