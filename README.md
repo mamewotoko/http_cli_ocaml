@@ -13,7 +13,7 @@ Run
 ```
 ./http
 ```
-HTTP response from www.google.com will be displayed.
+HTTP response from mamewo.ddo.jp will be displayed.
 
 History
 -------
@@ -21,14 +21,13 @@ History
 
 TODO
 ----
-* add travis ci script
-  * https://github.com/ocaml/ocaml-ci-scripts
 * write url.mli and http.mli
 * output executable to directory (e.g. bin)
 
 References
 ----------
-This program uses ocaml makefile to build.
+* [OCamlMakefile](http://mmottl.github.io/ocaml-makefile/)
+* [ocaml/ocaml-ci-scripts](https://github.com/ocaml/ocaml-ci-scripts)
 
 ----
 Takashi Masuyama < mamewotoko@gmail.com >

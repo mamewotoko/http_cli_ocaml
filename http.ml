@@ -1,6 +1,6 @@
 (************************************************************
    http.ml		Created      : Sat Feb  8 19:40:34 2003
-  			Last modified: Sat Dec 24 20:38:21 2016
+  			Last modified: Sun Dec 25 05:24:51 2016
   Compile: ocamlc.opt -g str.cma unix.cma url.cmo http.ml -o http #
   FTP Directory: sources/ocaml #
 ************************************************************)
@@ -35,7 +35,7 @@ let get url =
     let s = connect url.hostname http_port in
     let buf = String.make 1 '\000' in
     let c = ref "" in
-    let size =
+    let _ =
       Unix.write s request_string 0 (String.length request_string) in
     (*    let _ = Printf.printf "size = %d" size in *)
     try
