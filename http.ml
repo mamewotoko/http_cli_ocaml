@@ -1,6 +1,6 @@
 (************************************************************
    http.ml		Created      : Sat Feb  8 19:40:34 2003
-  			Last modified: Sat Feb 08 22:34:40 2003
+  			Last modified: Sat Dec 24 20:38:21 2016
   Compile: ocamlc.opt -g str.cma unix.cma url.cmo http.ml -o http #
   FTP Directory: sources/ocaml #
 ************************************************************)
@@ -13,7 +13,7 @@ module Unix = UnixLabels
 
 exception Error of string
 
-(* 決めうち。 直すべきでしょう *)
+(* TODO: get from command line *)
 let http_port = 80
 
 open Url
@@ -30,14 +30,14 @@ let get url =
     raise (Error ("irregural protocol"))
   else
     let request_string =
-      Printf.sprintf "GET %s\r\n" url.path in
-    let _ = print_endline  request_string;  flush stdout   in
+      Printf.sprintf "GET %s\r\n\r\n" url.path in
+    let _ = print_endline request_string;  flush stdout in
     let s = connect url.hostname http_port in
     let buf = String.make 1 '\000' in
     let c = ref "" in
     let size =
       Unix.write s request_string 0 (String.length request_string) in
-    let _ = Printf.printf "size = %d" size in
+    (*    let _ = Printf.printf "size = %d" size in *)
     try
       while true do
 	let num = Unix.read s buf 0 1 in
@@ -49,9 +49,3 @@ let get url =
       !c
     with
       End_of_file -> !c
-
-let _ =
-  let _ = print_endline "starting"; flush stdout in
-  let u = Url.of_string "http://127.0.0.1" in
-  let _ = print_endline "URL is created"; flush stdout in
-  print_endline (get u)

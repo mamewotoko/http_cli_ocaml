@@ -1,13 +1,13 @@
 (************************************************************
    url.ml		Created      : Sat Feb  8 19:44:23 2003
-  			Last modified: Sat Feb 08 22:01:11 2003
+  			Last modified: Sat Dec 24 20:29:19 2016
    Compile: ocamlc.opt str.cma url.ml -o url #
   FTP Directory: sources/ocaml #
 ************************************************************)
 (**
-
+  not well tested url parser
+  
   @author Takashi Masuyama <mamewo@dk9.so-net.ne.jp>
-
 *)
 
 exception IrreguralURL
@@ -15,9 +15,6 @@ exception Unsupported of string
 
 let url_regexp = 
   Str.regexp "^\\([a-z]+\\)://\\([^/]+\\)\\([^\\?]*\\)\\(?\\(.*\\)\\)?$"
-
-(*let host_of url =*)
-(*  Str.*)
 
 type hostname = string
 type path = string
@@ -57,19 +54,3 @@ let of_string url =
       param = param }
   else
     raise IrreguralURL
-
-(*let protocol_of (URL(proto, _, _, _)) = proto*)
-(*let host_of (URL(_, host, _, _)) = host*)
-(*let path_of (URL(_, _, path, _)) = path*)
-(*let param_of (URL(_, _, _, param)) = param*)
-
-let test_data =
-  "http://www.okuiaki.com/gheahegoiahdo?mamewo=0"
-
-(*let _ =*)
-(*  let u = of_string test_data in*)
-(*  print_endline (host_of u);*)
-(*  print_endline (path_of u);*)
-(*  match param_of u with*)
-(*    Some(s) -> print_endline s*)
-(*  | None -> print_endline "NONE"*)
